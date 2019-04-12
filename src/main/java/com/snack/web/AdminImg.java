@@ -1,16 +1,14 @@
 package com.snack.web;
 
-import java.io.File;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.snack.utils.ResponseUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.snack.utils.ResponseUtil;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 
 @Controller
 @RequestMapping("/admin/img/")
@@ -25,6 +23,10 @@ public class AdminImg {
 	@ResponseBody
     public String upload(HttpServletRequest request,
            @RequestParam("file") MultipartFile file,String fileName) throws Exception {
+        System.out.println("11111");
+
+
+
        //如果文件不为空，写入上传路径
        if(!file.isEmpty()) {
            //上传文件路径
@@ -43,5 +45,7 @@ public class AdminImg {
        } else {
            return ResponseUtil.errorToClient();
        }
+
+
     }
 }
