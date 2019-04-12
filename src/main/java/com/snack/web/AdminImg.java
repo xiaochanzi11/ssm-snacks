@@ -23,10 +23,7 @@ public class AdminImg {
 	@ResponseBody
     public String upload(HttpServletRequest request,
            @RequestParam("file") MultipartFile file,String fileName) throws Exception {
-        System.out.println("11111");
-
-
-
+       
        //如果文件不为空，写入上传路径
        if(!file.isEmpty()) {
            //上传文件路径
